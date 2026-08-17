@@ -7,7 +7,7 @@ spec:
     - name: error-rate
       interval: 30s
       count: 3
-      failureLimit: 1
+      failureLimit: 0
       successCondition: result[0] < 0
       provider:
         prometheus:
