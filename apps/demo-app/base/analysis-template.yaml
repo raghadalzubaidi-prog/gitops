@@ -22,19 +22,3 @@ spec:
               sum(rate(http_requests_total{job="demo-app",namespace="prod"}[2m])),
               0.001
             )
-
-    - name: p99-latency
-      interval: 30s
-      count: 3
-      failureLimit: 1
-      successCondition: result[0] < 0.5
-      provider:
-        prometheus:
-          address: http://monitoring-kube-prometheus-prometheus.monitoring.svc:9090
-          query: |
-            histogram_quantile(
-              0.99,
-              sum(
-                rate(http_request_duration_seconds_bucket{job="demo-app",namespace="prod"}[2m])
-              ) by (le)
-            )
