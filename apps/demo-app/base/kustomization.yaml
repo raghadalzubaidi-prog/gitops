@@ -6,3 +6,4 @@ resources:
   - service.yaml
   - canary-service.yaml
   - servicemonitor.yaml
+  - analysis-template.yaml

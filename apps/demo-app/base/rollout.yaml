@@ -27,9 +27,16 @@ spec:
     canary:
       canaryService: demo-app-canary
       stableService: demo-app
+
       steps:
         - setWeight: 20
-        - pause: {}
+        - analysis:
+            templates:
+              - templateName: demo-app-analysis
+
         - setWeight: 50
-        - pause: {}
+        - analysis:
+            templates:
+              - templateName: demo-app-analysis
+
         - setWeight: 100
