@@ -7,8 +7,8 @@ spec:
     - name: error-rate
       interval: 30s
       count: 3
-      failureLimit: 0
-      successCondition: result[0] < 0
+      failureLimit: 1
+      successCondition: result[0] < 0.05
       provider:
         prometheus:
           address: http://monitoring-kube-prometheus-prometheus.monitoring.svc:9090
