@@ -5,3 +5,4 @@ resources:
   - rollout.yaml
   - service.yaml
   - canary-service.yaml
+  - servicemonitor.yaml
