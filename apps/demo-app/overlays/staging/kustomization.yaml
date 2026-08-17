@@ -6,6 +6,10 @@ namespace: staging
 resources:
   - ../../base
 
+images:
+  - name: raghad37/ci-cd-lab
+    newTag: v3
+
 patches:
   - target:
       kind: Rollout
